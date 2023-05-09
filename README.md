@@ -19,8 +19,10 @@ import warnings
 warnings.filter
 #  importing dataset
 edge_list=pd.read_csv("my_data.csv")
+# printing head of dataset
 edge_list.head()
-edge_list = edge_list.applymap(str)
+# string to integers
+ edge_list = edge_list.applymap(str)
 # create undirected graph from the edgelist
 G=nx.from_pandas_edgelist(edge_list, source='node_1', target='neighbor_1', create_using=nx.Graph())
 # printing nodes
